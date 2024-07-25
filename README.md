@@ -48,4 +48,10 @@ Contains functions to detect nudity using the NudeNet library.
 # API Keys
 Make sure to replace the placeholders with your actual API keys in gore.py and app.py files
 
+# Example working 
+<img width="940" alt="Screenshot 2024-07-25 at 5 42 51 PM" src="https://github.com/user-attachments/assets/64b3e7bd-984e-478e-90fd-cedda253a90f">
+
+
+Host the Streamlit app locally at `http://localhost:8501/`. Make sure to replace placeholders like `your_api_user_id`, `your_api_secret`, and `your-email@example.com` with your actual values before publishing.
+
 
