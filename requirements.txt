@@ -2,4 +2,4 @@ streamlit==1.36.0
 nudenet
 requests
 pillow
-onnxruntime==1.18.0
+onnxruntime==1.15.1
