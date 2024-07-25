@@ -1,5 +1,8 @@
 import streamlit as st
-from nudenet import NudeDetector
+try:
+    from nudenet import NudeDetector
+except ImportError as e:
+    st.error(f"ImportError: {e}")
 import requests
 from io import BytesIO
 from PIL import Image
