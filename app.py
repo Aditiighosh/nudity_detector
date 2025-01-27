@@ -1,4 +1,9 @@
 import streamlit as st
+from dotenv import load_dotenv
+import os
+load_dotenv()
+SIGHTENGINE_USER_ID = os.getenv('SIGHTENGINE_USER_ID')
+SIGHTENGINE_API_SECRET = os.getenv('SIGHTENGINE_API_SECRET')
 try:
     from nudenet import NudeDetector
 except ImportError as e:
@@ -33,8 +38,8 @@ def detect_nudity(image_data):
 def detect_gore_violence(image_data):
     params = {
         'models': 'weapon,gore-2.0,violence',
-        'api_user': '1059340949',  # Replace with your actual API user ID
-        'api_secret': 'rpuE4donxjTCnJFrcNfjviqhp4NDramZ'  # Replace with your actual API secret
+        'api_user': os.getenv('SIGHTENGINE_USER_ID'),
+        'api_secret': os.getenv('SIGHTENGINE_API_SECRET')
     }
     
     try:
@@ -49,6 +54,7 @@ def detect_gore_violence(image_data):
     except Exception as e:
         st.error(f"Error in gore/violence detection: {e}")
         return {"status": "error"}
+
 
 def main():
     st.title("Nudity, Gore, and Violence Detection")
